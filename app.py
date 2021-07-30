@@ -83,7 +83,8 @@ def main():
                                           'positive.html', strain=strain,
                                           type=type, effects=effects,
                                           flavor=flavor,
-                                          description=description)  # all variables here should be defined in the postive.html page
+                                          description=description
+                                          )  # all variables here should be defined in the postive.html page
 
 
 if __name__ == '__main__':

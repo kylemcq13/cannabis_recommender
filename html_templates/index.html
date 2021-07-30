@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Beer Recommender - Kyle McQuillen</title>
+  <title>Cannabis Strain Recommender - Kyle McQuillen</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins:300,500&amp;display=swap'>
@@ -441,7 +441,7 @@ figure {
         box-shadow: 0px 0px 10px -4px grey;
         text-align: center;
     }
-    #beer_name{
+    #strain{
         width: 70%;
         padding: 1em;
         border-radius: 5px;
@@ -469,10 +469,10 @@ figure {
 <!-- partial:index.partial.html -->
 
 <!-- Demo -->
-    <div class="beer">
-        <h2><u>Beer Recommendation System</u></h2>
+    <div class="cannabis">
+        <h2><u>Cannabis Strain Recommendation System</u></h2>
         <form action="{{ url_for('main') }}" method="POST">
-            <input type="text" id="beer_name" name="beer_name" placeholder="Enter the name of a beer you enjoy" required />
+            <input type="text" id="strain" name="strain" placeholder="Enter the name of a beer you enjoy" required />
             <input type="submit" id="submission_button" value="Submit"/>
         </form>
         <p style="color: #919191; padding: 1em;">The model uses <b>Content Based Recommendations</b> to find similar beers. </a>.</p>
