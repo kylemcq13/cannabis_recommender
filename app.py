@@ -1,56 +1,14 @@
 import flask
+from flask import request
 import pandas as pd
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import linear_kernel
-from nltk.stem import WordNetLemmatizer
-from nltk import word_tokenize
-import re
+from model.model import InputForm
+from compute import effects_reco
 
 app = flask.Flask(__name__, template_folder='html_templates')
 
-df = pd.read_csv(r'F:\Datasets\Cannabis StrainsFeatures.csv')
+df = pd.read_csv('data/cannabis.csv')
 
-lemmatizer = WordNetLemmatizer()
-
-df['Description'] = df['Description'].apply(
-        lambda x: ' '.join([lemmatizer.lemmatize(word.lower()) 
-        for word in word_tokenize(re.sub(r'([^\s\w]|_)+', ' ', str(x)))]))
-
-# using lemmatized_text, create the corpus
-corpus = df['Description']
-
-# FEATURE EXTRACTION
-tfidf_model = TfidfVectorizer(max_features=500,
-                              ngram_range=(1, 3), 
-                              max_df=0.25,
-                              min_df=0.05,
-                              stop_words='english')
-
-tfidf_matrix = tfidf_model.fit_transform(corpus).todense()
-
-# calculate the cosine similarity of the matrix
-cosine_sim = linear_kernel(tfidf_matrix, tfidf_matrix)
-
-# Construct a reverse mapping of indices and beer names, 
-# and drop duplicate names, if any
-df = df.reset_index()
-indices = pd.Series(df.index, index=df['Strain']).drop_duplicates()
-all_titles = [df['Strain'][i] for i in range(len(df['Strain']))]
-
-
-# Function that takes in beer name as input and gives recommendations
-def content_recommender(title, cosine_sim=cosine_sim, df=df,
-                        indices=indices):
-
-    # Obtain the index of the beer that matches the name
-    idx = indices[title]
-    sim_scores = list(enumerate(cosine_sim[idx]))
-    sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
-    sim_scores = sim_scores[1:11]
-    canna_indices = [i[0] for i in sim_scores]
-
-    return df[['Strain', 'Type', 'Effects', 
-               'Flavor', 'Description']].iloc[canna_indices]
+all_effects = [df['cleaned_effects'][i] for i in range(len(df['cleaned_effects']))]
 
 
 # Set up the main route
@@ -59,29 +17,29 @@ def main():
     if flask.request.method == 'GET':
         return(flask.render_template('index.html'))
     
-    if flask.request.method == 'POST':
-        m_name = flask.request.form['Strain']  # Strain should be defined in index.html
+    form = InputForm(request.form)
+    if flask.request.method == 'POST' and form.validate():
+        result_final = effects_reco(form.Effect_1.data, form.Effect_2.data,
+                                    form.Effect_3.data, df)
+        m_name = flask.request.form['cleaned_effects']  # Strain should be defined in index.html
         m_name = m_name.title()
-        if m_name not in all_titles:
+        if m_name not in all_effects:
             return(flask.render_template('negative.html', name=m_name))
         else:
-            result_final = content_recommender(m_name)
+            # result_final = effects_reco(m_name)
             strain = []
             type = []
-            effects = []
             flavor = []  
             description = []
             for i in range(len(result_final)):
                 strain.append(result_final.iloc[i][0])
                 type.append(result_final.iloc[i][1])
-                effects.append(result_final.iloc[i][2])
-                flavor.append(result_final.iloc[i][3])
-                description.append(result_final.iloc[i][4])
+                flavor.append(result_final.iloc[i][2])
+                description.append(result_final.iloc[i][3])
 
-            # where I left off... 7/27/21
             return flask.render_template(
                                           'positive.html', strain=strain,
-                                          type=type, effects=effects,
+                                          type=type,
                                           flavor=flavor,
                                           description=description
                                           )  # all variables here should be defined in the postive.html page
