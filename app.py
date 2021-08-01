@@ -19,14 +19,15 @@ def main():
     
     form = InputForm(request.form)
     if flask.request.method == 'POST' and form.validate():
-        result_final = effects_reco(form.Effect_1.data, form.Effect_2.data,
-                                    form.Effect_3.data, df)
+        # result_final = effects_reco(form.Effect_1.data, form.Effect_2.data,
+        #                            form.Effect_3.data, df)
         m_name = flask.request.form['cleaned_effects']  # Strain should be defined in index.html
         m_name = m_name.title()
         if m_name not in all_effects:
             return(flask.render_template('negative.html', name=m_name))
         else:
-            # result_final = effects_reco(m_name)
+            result_final = effects_reco(form.Effect_1.data, form.Effect_2.data,
+                                    form.Effect_3.data, df)
             strain = []
             type = []
             flavor = []  
