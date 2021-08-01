@@ -472,7 +472,9 @@ figure {
     <div class="cannabis">
         <h2><u>Cannabis Strain Recommendation System</u></h2>
         <form action="{{ url_for('main') }}" method="POST">
-            <input type="text" id="strain" name="strain" placeholder="Enter the name of a beer you enjoy" required />
+            <input type="text" id="cleaned_effects" name="cleaned_effects" placeholder="Enter a desired effect" required />
+            <input type="text" id="cleaned_effects" name="cleaned_effects" placeholder="Enter a desired effect" required />
+            <input type="text" id="cleaned_effects" name="cleaned_effects" placeholder="Enter a desired effect" required />
             <input type="submit" id="submission_button" value="Submit"/>
         </form>
         <p style="color: #919191; padding: 1em;">The model uses <b>Content Based Recommendations</b> to find similar beers. </a>.</p>
