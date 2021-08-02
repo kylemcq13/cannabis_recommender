@@ -8,9 +8,6 @@ app = flask.Flask(__name__, template_folder='html_templates')
 
 df = pd.read_csv('data/cannabis.csv')
 
-all_effects = [df['cleaned_effects'][i] for i in range(len(df['cleaned_effects']))]
-
-
 # Set up the main route
 @app.route('/', methods=['GET', 'POST'])
 
@@ -19,16 +16,9 @@ def main():
         return(flask.render_template('index.html'))
     
     if flask.request.method == 'POST':
-        # result_final = effects_reco(form.Effect_1.data, form.Effect_2.data,
-        #                            form.Effect_3.data, df)
-        # m_name = flask.request.form['cleaned_effects']  # Strain should be defined in index.html
-        # m_name = m_name.title()
-        # if m_name not in all_effects:
-        #    return(flask.render_template('negative.html', name=m_name))
-        #else:
         form = InputForm(request.form)
-        result_final = effects_reco(form.Effect_1.data, form.Effect_2.data,
-                                    form.Effect_3.data, df)
+        result_final = effects_reco(form.effect_1.data, form.effect_2.data,
+                                    form.effect_3.data, df)
         strain = []
         type = []
         flavor = []  
@@ -45,7 +35,7 @@ def main():
                                  canna_type=type,
                                  canna_flavor=flavor,
                                  canna_desc=description))
-        # all variables here should be defined in the positive.html page
+        
 
 
 if __name__ == '__main__':

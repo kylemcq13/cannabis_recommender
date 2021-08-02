@@ -470,14 +470,56 @@ figure {
 
 <!-- Demo -->
     <div class="cannabis">
-        <h2><u>Cannabis Strain Recommendation System</u></h2>
-        <form action="{{ url_for('main') }}" method="POST">
-            <input type="text" id="cleaned_effects" name="cleaned_effects" placeholder="Enter a desired effect" required />
-            <input type="text" id="cleaned_effects" name="cleaned_effects" placeholder="Enter a desired effect" required />
-            <input type="text" id="cleaned_effects" name="cleaned_effects" placeholder="Enter a desired effect" required />
+        <h2><u>Cannabis Strain Recommender</u></h2>
+        <form name="effects", action="{{ url_for('main') }}" method="POST">
+          <select class="form-control" id="effect_1" name="effect_1">
+            <option value="">-- choose one --
+            <option value="sleepy">sleepy</option>
+            <option value="tingly">tingly</option>
+            <option value="relaxed">relaxed</option>
+            <option value="euphoric">euphoric</option>
+            <option value="focused">focused</option>
+            <option value="happy">happy</option>
+            <option value="hungry">hungry</option>
+            <option value="talkative">talkative</option>
+            <option value="creative">creative</option>
+            <option value="giggly">giggly</option>
+            <option value="uplifted">uplifted</option>
+            <option value="energetic">energetic</option>
+            </select>  
+          <select class="form-control" id="effect_2" name="effect_2">
+              <option value="">-- choose one --
+              <option value="sleepy">sleepy</option>
+              <option value="tingly">tingly</option>
+              <option value="relaxed">relaxed</option>
+              <option value="euphoric">euphoric</option>
+              <option value="focused">focused</option>
+              <option value="happy">happy</option>
+              <option value="hungry">hungry</option>
+              <option value="talkative">talkative</option>
+              <option value="creative">creative</option>
+              <option value="giggly">giggly</option>
+              <option value="uplifted">uplifted</option>
+              <option value="energetic">energetic</option>
+            </select> 
+          <select class="form-control" id="effect_3" name="effect_3">
+              <option value="">-- choose one --
+              <option value="sleepy">sleepy</option>
+              <option value="tingly">tingly</option>
+              <option value="relaxed">relaxed</option>
+              <option value="euphoric">euphoric</option>
+              <option value="focused">focused</option>
+              <option value="happy">happy</option>
+              <option value="hungry">hungry</option>
+              <option value="talkative">talkative</option>
+              <option value="creative">creative</option>
+              <option value="giggly">giggly</option>
+              <option value="uplifted">uplifted</option>
+              <option value="energetic">energetic</option>
+            </select>
             <input type="submit" id="submission_button" value="Submit"/>
         </form>
-        <p style="color: #919191; padding: 1em;">The model uses <b>Content Based Recommendations</b> to find similar beers. </a>.</p>
+        <p style="color: #919191; padding: 1em;">Enter three desired effects from the dropdown menus above to get cannabis strain recommendations. </a>.</p>
         <br>
   </div>
 <!-- partial -->
