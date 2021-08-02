@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Beer Recommender - Kyle McQuillen</title>
+  <title>Cannabis Strain Recommender - Kyle McQuillen</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins:300,500&amp;display=swap'>
@@ -461,65 +461,46 @@ figure {
 </head>
 <body>
 
-    <div class="beer">
+    <div class="cannabis">
         <h2><u>Recommendations:</u></h2>
         <p>Showing results for: {{ search_name }}</p>
-        <table class="beer_table" align="center">
+        <table class="cannabis_table" align="center">
             <tr>
-                <th>Style</th>
-                <th>Brewery</th>
-                <th>Beer Name</th>
+                <th>Strain</th>
+                <th>Type</th>
+                <th>Flavor</th>
+                <th>Description</th>
             </tr>
             <tbody class="table_body">
                 <tr>
-                    <td>{{ beer_names[0] }}</td>
-                    <td>{{ beer_style[0] }}</td>
-                    <td>{{ brewery[0] }}</td>
+                    <td>{{ canna_strain[0] }}</td>
+                    <td>{{ canna_type[0] }}</td>
+                    <td>{{ canna_flavor[0] }}</td>
+                    <td>{{ canna_desc[0] }}</td>
                 </tr>
                 <tr>
-                    <td>{{ beer_names[1] }}</td>
-                    <td>{{ beer_style[1] }}</td>
-                    <td>{{ brewery[1] }}</td>
+                  <td>{{ canna_strain[1] }}</td>
+                  <td>{{ canna_type[1] }}</td>
+                  <td>{{ canna_flavor[1] }}</td>
+                  <td>{{ canna_desc[1] }}</td>
                 </tr>
                 <tr>
-                    <td>{{ beer_names[2] }}</td>
-                    <td>{{ beer_style[2] }}</td>
-                    <td>{{ brewery[2] }}</td>
+                  <td>{{ canna_strain[2] }}</td>
+                  <td>{{ canna_type[2] }}</td>
+                  <td>{{ canna_flavor[2] }}</td>
+                  <td>{{ canna_desc[2] }}</td>
                 </tr>
                 <tr>
-                    <td>{{ beer_names[3] }}</td>
-                    <td>{{ beer_style[3] }}</td>
-                    <td>{{ brewery[3] }}</td>
+                  <td>{{ canna_strain[3] }}</td>
+                  <td>{{ canna_type[3] }}</td>
+                  <td>{{ canna_flavor[3] }}</td>
+                  <td>{{ canna_desc[3] }}</td>
                 </tr>
                 <tr>
-                    <td>{{ beer_names[4] }}</td>
-                    <td>{{ beer_style[4] }}</td>
-                    <td>{{ brewery[4] }}</td>
-                </tr>
-                <tr>
-                    <td>{{ beer_names[5] }}</td>
-                    <td>{{ beer_style[5] }}</td>
-                    <td>{{ brewery[5] }}</td>
-                </tr>
-                <tr>
-                    <td>{{ beer_names[6] }}</td>
-                    <td>{{ beer_style[6] }}</td>
-                    <td>{{ brewery[6] }}</td>
-                </tr>
-                <tr>
-                    <td>{{ beer_names[7] }}</td>
-                    <td>{{ beer_style[7] }}</td>
-                    <td>{{ brewery[7] }}</td>
-                </tr>
-                <tr>
-                    <td>{{ beer_names[8] }}</td>
-                    <td>{{ beer_style[8] }}</td>
-                    <td>{{ brewery[8] }}</td>
-                </tr>
-                <tr>
-                    <td>{{ beer_names[9] }}</td>
-                    <td>{{ beer_style[9] }}</td>
-                    <td>{{ brewery[9] }}</td>
+                  <td>{{ canna_strain[4] }}</td>
+                  <td>{{ canna_type[4] }}</td>
+                  <td>{{ canna_flavor[4] }}</td>
+                  <td>{{ canna_desc[4] }}</td>
                 </tr>
             </tbody>
         </table>

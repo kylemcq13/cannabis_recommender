@@ -21,4 +21,4 @@ def effects_reco(effect1, effect2, effect3, df):
     # return top recos, sort by Rating and word match score
     df.sort_values(by=['Rating', 'score'], inplace=True, ascending=False)
 
-    return df[['Strain', 'Type', 'Description']][0:10]
+    return df[['Strain', 'Type', 'Flavor', 'Description']][0:5]
