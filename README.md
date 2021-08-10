@@ -10,27 +10,27 @@ Data was obtained from Kaggle. It contains cannabis strain names along with asso
 
 
 ### Flavor
-Cannabis is very diverse in flavor profiles. It contains a complex mixture of volatile chemical compounds that is actually similar to hops. Common descriptors include earthy, citrus, flowery and piney. See wordcloud below for reference.
+Cannabis is very diverse in flavor profiles. It contains a complex mixture of volatile chemical compounds that are actually similar to the compounds you find in hops. Common descriptors include earthy, citrus, flowery and piney. See wordcloud below for reference.
 
 <img src="https://github.com/kylemcq13/cannabis_recommender/blob/main/images/wordcloud.PNG" alt="Flavor WordCloud" width="500" height="500">
 
 
 
 ### Effects
-Cannabis is also diverse in its effects on the body and mind. The most commonly occurring effects in this particular dataset include 'happy', 'relaxed', 'euphoric', and 'uplifted'. 
+Cannabis is also diverse in its effects on the body and mind. The most commonly occurring effects in this particular dataset include 'happy', 'relaxed', 'euphoric', and 'uplifted'. Each strain is associated with five unique effects in the dataset.
 
 <img src="https://github.com/kylemcq13/cannabis_recommender/blob/main/images/top_effects_chart.PNG" alt="Top Effects Chart" width="500" height="700">
 
 
 
 ### Description
-The dataset also contains descriptions of the strains. These vary in content but typically discusses the effects, flavor and some notes on growing on the strain. An example output is below:
+The dataset also contains descriptions of the strains. These vary in content but typically discusses the effects, flavor and some notes on growing on the strain. The descriptions also varied in size, from 25 words on the lower end up to 150 words on the high side. An example output is below:
 
 <img src="https://github.com/kylemcq13/cannabis_recommender/blob/main/images/sample_description.PNG" alt="sample_description" width="800" height="150">
 
 
 ### How it Works
-The user inputs three desired effects from three dropdown menus on the homepage. The model will then make suggestions based on this input and the highest rated strains that match the desired effect. 
+The user inputs three desired effects from three dropdown menus on the homepage. The model will then make suggestions based on this input and the highest rated strains that match the desired effect. Another model was created in the exploration notebook which can take a strain name that a user enjoyed and the model recommends strains based on description similarities. 
 
 See exploration notebook for more details.
 
