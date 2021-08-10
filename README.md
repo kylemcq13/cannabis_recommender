@@ -12,21 +12,21 @@ Data was obtained from Kaggle. It contains cannabis strain names along with asso
 ### Flavor
 Cannabis is very diverse in flavor profiles. It contains a complex mixture of volatile chemical compounds that is actually similar to hops. Common descriptors include earthy, citrus, flowery and piney. See wordcloud below for reference.
 
-<img src="images/wordcloud.png" alt="Flavor WordCloud" width="500" height="500">
+<img src="https://github.com/kylemcq13/cannabis_recommender/blob/main/images/wordcloud.PNG" alt="Flavor WordCloud" width="500" height="500">
 
 
 
 ### Effects
 Cannabis is also diverse in its effects on the body and mind. The most commonly occurring effects in this particular dataset include 'happy', 'relaxed', 'euphoric', and 'uplifted'. 
 
-<img src="images/top_effects_chart.png" alt="Top Effects Chart" width="500" height="700">
+<img src="https://github.com/kylemcq13/cannabis_recommender/blob/main/images/top_effects_chart.PNG" alt="Top Effects Chart" width="500" height="700">
 
 
 
 ### Description
 The dataset also contains descriptions of the strains. These vary in content but typically discusses the effects, flavor and some notes on growing on the strain. An example output is below:
 
-<img src="images/sample_description.png" alt="sample_description" width="800" height="150">
+<img src="https://github.com/kylemcq13/cannabis_recommender/blob/main/images/sample_description.PNG" alt="sample_description" width="800" height="150">
 
 
 ### How it Works
